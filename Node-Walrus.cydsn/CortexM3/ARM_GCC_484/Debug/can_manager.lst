@@ -1,0 +1,1124 @@
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"can_manager.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	test_message
+  19              		.section	.rodata
+  20              		.align	2
+  21              		.type	test_message, %object
+  22              		.size	test_message, 8
+  23              	test_message:
+  24 0000 01       		.byte	1
+  25 0001 02       		.byte	2
+  26 0002 03       		.byte	3
+  27 0003 04       		.byte	4
+  28 0004 05       		.byte	5
+  29 0005 06       		.byte	6
+  30 0006 07       		.byte	7
+  31 0007 08       		.byte	8
+  32              		.comm	can_queue,2048,4
+  33              		.global	can_head
+  34              		.bss
+  35              		.align	1
+  36              		.type	can_head, %object
+  37              		.size	can_head, 2
+  38              	can_head:
+  39 0000 0000     		.space	2
+  40              		.global	can_tail
+  41              		.align	1
+  42              		.type	can_tail, %object
+  43              		.size	can_tail, 2
+  44              	can_tail:
+  45 0002 0000     		.space	2
+  46              		.section	.text.can_init,"ax",%progbits
+  47              		.align	2
+  48              		.global	can_init
+  49              		.thumb
+  50              		.thumb_func
+  51              		.type	can_init, %function
+  52              	can_init:
+  53              	.LFB56:
+  54              		.file 1 ".\\can_manager.c"
+   1:.\can_manager.c **** #include "can_manager.h"
+   2:.\can_manager.c **** #include "stdlib.h"
+   3:.\can_manager.c **** 
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 2
+
+
+   4:.\can_manager.c **** 
+   5:.\can_manager.c **** const uint8_t test_message[] = {0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08};
+   6:.\can_manager.c **** volatile DataPacket can_queue[CAN_QUEUE_LENGTH];
+   7:.\can_manager.c **** volatile uint16_t can_head = 0;
+   8:.\can_manager.c **** volatile uint16_t can_tail = 0;
+   9:.\can_manager.c **** 
+  10:.\can_manager.c **** 
+  11:.\can_manager.c **** 
+  12:.\can_manager.c **** void can_init()
+  13:.\can_manager.c **** {
+  55              		.loc 1 13 0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 1, uses_anonymous_args = 0
+  59 0000 80B5     		push	{r7, lr}
+  60              		.cfi_def_cfa_offset 8
+  61              		.cfi_offset 7, -8
+  62              		.cfi_offset 14, -4
+  63 0002 00AF     		add	r7, sp, #0
+  64              		.cfi_def_cfa_register 7
+  14:.\can_manager.c **** 	CAN_1_GlobalIntEnable(); // CAN Initialization
+  65              		.loc 1 14 0
+  66 0004 FFF7FEFF 		bl	CAN_1_GlobalIntEnable
+  15:.\can_manager.c **** 	CAN_1_Init();
+  67              		.loc 1 15 0
+  68 0008 FFF7FEFF 		bl	CAN_1_Init
+  16:.\can_manager.c **** 	CAN_1_Start();
+  69              		.loc 1 16 0
+  70 000c FFF7FEFF 		bl	CAN_1_Start
+  17:.\can_manager.c **** } // can_init()
+  71              		.loc 1 17 0
+  72 0010 80BD     		pop	{r7, pc}
+  73              		.cfi_endproc
+  74              	.LFE56:
+  75              		.size	can_init, .-can_init
+  76 0012 00BF     		.section	.text.can_test_send,"ax",%progbits
+  77              		.align	2
+  78              		.global	can_test_send
+  79              		.thumb
+  80              		.thumb_func
+  81              		.type	can_test_send, %function
+  82              	can_test_send:
+  83              	.LFB57:
+  18:.\can_manager.c **** 
+  19:.\can_manager.c **** 
+  20:.\can_manager.c **** 
+  21:.\can_manager.c **** 
+  22:.\can_manager.c **** uint8_t can_test_send(uint16_t ID,uint8_t msg[8])
+  23:.\can_manager.c **** {
+  84              		.loc 1 23 0
+  85              		.cfi_startproc
+  86              		@ args = 0, pretend = 0, frame = 32
+  87              		@ frame_needed = 1, uses_anonymous_args = 0
+  88 0000 80B5     		push	{r7, lr}
+  89              		.cfi_def_cfa_offset 8
+  90              		.cfi_offset 7, -8
+  91              		.cfi_offset 14, -4
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 3
+
+
+  92 0002 88B0     		sub	sp, sp, #32
+  93              		.cfi_def_cfa_offset 40
+  94 0004 00AF     		add	r7, sp, #0
+  95              		.cfi_def_cfa_register 7
+  96 0006 0346     		mov	r3, r0
+  97 0008 3960     		str	r1, [r7]
+  98 000a FB80     		strh	r3, [r7, #6]	@ movhi
+  24:.\can_manager.c **** 	uint8_t i, state;
+  25:.\can_manager.c **** 	CAN_1_TX_MSG message;
+  26:.\can_manager.c **** 	CAN_1_DATA_BYTES_MSG payload;
+  27:.\can_manager.c **** 
+  28:.\can_manager.c **** 	message.id = ID; // edit for testing
+  99              		.loc 1 28 0
+ 100 000c FB88     		ldrh	r3, [r7, #6]
+ 101 000e 3B61     		str	r3, [r7, #16]
+  29:.\can_manager.c **** 	message.rtr = 0;
+ 102              		.loc 1 29 0
+ 103 0010 0023     		movs	r3, #0
+ 104 0012 3B75     		strb	r3, [r7, #20]
+  30:.\can_manager.c **** 	message.ide = 0;
+ 105              		.loc 1 30 0
+ 106 0014 0023     		movs	r3, #0
+ 107 0016 7B75     		strb	r3, [r7, #21]
+  31:.\can_manager.c **** 	message.dlc = 0x08;
+ 108              		.loc 1 31 0
+ 109 0018 0823     		movs	r3, #8
+ 110 001a BB75     		strb	r3, [r7, #22]
+  32:.\can_manager.c **** 	message.irq = 1;
+ 111              		.loc 1 32 0
+ 112 001c 0123     		movs	r3, #1
+ 113 001e FB75     		strb	r3, [r7, #23]
+  33:.\can_manager.c **** 	message.msg = &payload;
+ 114              		.loc 1 33 0
+ 115 0020 07F10803 		add	r3, r7, #8
+ 116 0024 BB61     		str	r3, [r7, #24]
+  34:.\can_manager.c **** 
+  35:.\can_manager.c **** 	for(i=0;i<8;i++)
+ 117              		.loc 1 35 0
+ 118 0026 0023     		movs	r3, #0
+ 119 0028 FB77     		strb	r3, [r7, #31]
+ 120 002a 0CE0     		b	.L3
+ 121              	.L4:
+  36:.\can_manager.c **** 		payload.byte[i] = msg[i];
+ 122              		.loc 1 36 0 discriminator 2
+ 123 002c FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 124 002e FA7F     		ldrb	r2, [r7, #31]	@ zero_extendqisi2
+ 125 0030 3968     		ldr	r1, [r7]
+ 126 0032 0A44     		add	r2, r2, r1
+ 127 0034 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 128 0036 07F12001 		add	r1, r7, #32
+ 129 003a 0B44     		add	r3, r3, r1
+ 130 003c 03F8182C 		strb	r2, [r3, #-24]
+  35:.\can_manager.c **** 	for(i=0;i<8;i++)
+ 131              		.loc 1 35 0 discriminator 2
+ 132 0040 FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 133 0042 0133     		adds	r3, r3, #1
+ 134 0044 FB77     		strb	r3, [r7, #31]
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 4
+
+
+ 135              	.L3:
+  35:.\can_manager.c **** 	for(i=0;i<8;i++)
+ 136              		.loc 1 35 0 is_stmt 0 discriminator 1
+ 137 0046 FB7F     		ldrb	r3, [r7, #31]	@ zero_extendqisi2
+ 138 0048 072B     		cmp	r3, #7
+ 139 004a EFD9     		bls	.L4
+  37:.\can_manager.c **** 
+  38:.\can_manager.c **** 	state = CAN_1_SendMsg(&message);
+ 140              		.loc 1 38 0 is_stmt 1
+ 141 004c 07F11003 		add	r3, r7, #16
+ 142 0050 1846     		mov	r0, r3
+ 143 0052 FFF7FEFF 		bl	CAN_1_SendMsg
+ 144 0056 0346     		mov	r3, r0
+ 145 0058 BB77     		strb	r3, [r7, #30]
+  39:.\can_manager.c **** 
+  40:.\can_manager.c **** /*
+  41:.\can_manager.c **** 	if(state != CYRET_SUCCESS)
+  42:.\can_manager.c **** 	{
+  43:.\can_manager.c **** 		LED_Write(1);
+  44:.\can_manager.c **** 		return CAN_1_FAIL;
+  45:.\can_manager.c **** 	}
+  46:.\can_manager.c **** 
+  47:.\can_manager.c **** 	LED_Write(0);
+  48:.\can_manager.c **** 	return CYRET_SUCCESS;
+  49:.\can_manager.c **** */
+  50:.\can_manager.c **** 	
+  51:.\can_manager.c **** 	return state;
+ 146              		.loc 1 51 0
+ 147 005a BB7F     		ldrb	r3, [r7, #30]	@ zero_extendqisi2
+  52:.\can_manager.c **** } // can_test_send()
+ 148              		.loc 1 52 0
+ 149 005c 1846     		mov	r0, r3
+ 150 005e 2037     		adds	r7, r7, #32
+ 151 0060 BD46     		mov	sp, r7
+ 152              		@ sp needed
+ 153 0062 80BD     		pop	{r7, pc}
+ 154              		.cfi_endproc
+ 155              	.LFE57:
+ 156              		.size	can_test_send, .-can_test_send
+ 157              		.text
+ 158              	.Letext0:
+ 159              		.file 2 "d:\\software\\psoc\\psoc creator\\3.1\\psoc creator\\import\\gnu_cs\\arm\\4.8.4\\arm-none
+ 160              		.file 3 "d:\\software\\psoc\\psoc creator\\3.1\\psoc creator\\import\\gnu_cs\\arm\\4.8.4\\arm-none
+ 161              		.file 4 ".\\Generated_Source\\PSoC5/cytypes.h"
+ 162              		.file 5 ".\\Generated_Source\\PSoC5/CAN_1.h"
+ 163              		.file 6 ".\\data.h"
+ 164              		.file 7 ".\\Generated_Source\\PSoC5/core_cm3.h"
+ 165              		.section	.debug_info,"",%progbits
+ 166              	.Ldebug_info0:
+ 167 0000 CC020000 		.4byte	0x2cc
+ 168 0004 0400     		.2byte	0x4
+ 169 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 170 000a 04       		.byte	0x4
+ 171 000b 01       		.uleb128 0x1
+ 172 000c 4F010000 		.4byte	.LASF38
+ 173 0010 01       		.byte	0x1
+ 174 0011 D7000000 		.4byte	.LASF39
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 5
+
+
+ 175 0015 EA010000 		.4byte	.LASF40
+ 176 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 177 001d 00000000 		.4byte	0
+ 178 0021 00000000 		.4byte	.Ldebug_line0
+ 179 0025 02       		.uleb128 0x2
+ 180 0026 01       		.byte	0x1
+ 181 0027 06       		.byte	0x6
+ 182 0028 56020000 		.4byte	.LASF0
+ 183 002c 03       		.uleb128 0x3
+ 184 002d 1E000000 		.4byte	.LASF3
+ 185 0031 02       		.byte	0x2
+ 186 0032 1C       		.byte	0x1c
+ 187 0033 37000000 		.4byte	0x37
+ 188 0037 02       		.uleb128 0x2
+ 189 0038 01       		.byte	0x1
+ 190 0039 08       		.byte	0x8
+ 191 003a 70000000 		.4byte	.LASF1
+ 192 003e 02       		.uleb128 0x2
+ 193 003f 02       		.byte	0x2
+ 194 0040 05       		.byte	0x5
+ 195 0041 FF000000 		.4byte	.LASF2
+ 196 0045 03       		.uleb128 0x3
+ 197 0046 E7000000 		.4byte	.LASF4
+ 198 004a 02       		.byte	0x2
+ 199 004b 26       		.byte	0x26
+ 200 004c 50000000 		.4byte	0x50
+ 201 0050 02       		.uleb128 0x2
+ 202 0051 02       		.byte	0x2
+ 203 0052 07       		.byte	0x7
+ 204 0053 A4000000 		.4byte	.LASF5
+ 205 0057 03       		.uleb128 0x3
+ 206 0058 2E000000 		.4byte	.LASF6
+ 207 005c 02       		.byte	0x2
+ 208 005d 37       		.byte	0x37
+ 209 005e 62000000 		.4byte	0x62
+ 210 0062 02       		.uleb128 0x2
+ 211 0063 04       		.byte	0x4
+ 212 0064 05       		.byte	0x5
+ 213 0065 B7000000 		.4byte	.LASF7
+ 214 0069 03       		.uleb128 0x3
+ 215 006a 7E000000 		.4byte	.LASF8
+ 216 006e 02       		.byte	0x2
+ 217 006f 38       		.byte	0x38
+ 218 0070 74000000 		.4byte	0x74
+ 219 0074 02       		.uleb128 0x2
+ 220 0075 04       		.byte	0x4
+ 221 0076 07       		.byte	0x7
+ 222 0077 92000000 		.4byte	.LASF9
+ 223 007b 02       		.uleb128 0x2
+ 224 007c 08       		.byte	0x8
+ 225 007d 05       		.byte	0x5
+ 226 007e DC010000 		.4byte	.LASF10
+ 227 0082 02       		.uleb128 0x2
+ 228 0083 08       		.byte	0x8
+ 229 0084 07       		.byte	0x7
+ 230 0085 28010000 		.4byte	.LASF11
+ 231 0089 04       		.uleb128 0x4
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 6
+
+
+ 232 008a 04       		.byte	0x4
+ 233 008b 05       		.byte	0x5
+ 234 008c 696E7400 		.ascii	"int\000"
+ 235 0090 02       		.uleb128 0x2
+ 236 0091 04       		.byte	0x4
+ 237 0092 07       		.byte	0x7
+ 238 0093 10010000 		.4byte	.LASF12
+ 239 0097 03       		.uleb128 0x3
+ 240 0098 3F010000 		.4byte	.LASF13
+ 241 009c 03       		.byte	0x3
+ 242 009d 2A       		.byte	0x2a
+ 243 009e 2C000000 		.4byte	0x2c
+ 244 00a2 03       		.uleb128 0x3
+ 245 00a3 44020000 		.4byte	.LASF14
+ 246 00a7 03       		.byte	0x3
+ 247 00a8 36       		.byte	0x36
+ 248 00a9 45000000 		.4byte	0x45
+ 249 00ad 03       		.uleb128 0x3
+ 250 00ae CB010000 		.4byte	.LASF15
+ 251 00b2 03       		.byte	0x3
+ 252 00b3 41       		.byte	0x41
+ 253 00b4 57000000 		.4byte	0x57
+ 254 00b8 03       		.uleb128 0x3
+ 255 00b9 4D020000 		.4byte	.LASF16
+ 256 00bd 03       		.byte	0x3
+ 257 00be 42       		.byte	0x42
+ 258 00bf 69000000 		.4byte	0x69
+ 259 00c3 03       		.uleb128 0x3
+ 260 00c4 F9000000 		.4byte	.LASF17
+ 261 00c8 04       		.byte	0x4
+ 262 00c9 A1       		.byte	0xa1
+ 263 00ca 37000000 		.4byte	0x37
+ 264 00ce 03       		.uleb128 0x3
+ 265 00cf 09010000 		.4byte	.LASF18
+ 266 00d3 04       		.byte	0x4
+ 267 00d4 A3       		.byte	0xa3
+ 268 00d5 74000000 		.4byte	0x74
+ 269 00d9 02       		.uleb128 0x2
+ 270 00da 04       		.byte	0x4
+ 271 00db 04       		.byte	0x4
+ 272 00dc 65000000 		.4byte	.LASF19
+ 273 00e0 02       		.uleb128 0x2
+ 274 00e1 08       		.byte	0x8
+ 275 00e2 04       		.byte	0x4
+ 276 00e3 F2000000 		.4byte	.LASF20
+ 277 00e7 02       		.uleb128 0x2
+ 278 00e8 01       		.byte	0x1
+ 279 00e9 08       		.byte	0x8
+ 280 00ea 21020000 		.4byte	.LASF21
+ 281 00ee 02       		.uleb128 0x2
+ 282 00ef 04       		.byte	0x4
+ 283 00f0 07       		.byte	0x7
+ 284 00f1 D3010000 		.4byte	.LASF22
+ 285 00f5 05       		.uleb128 0x5
+ 286 00f6 08       		.byte	0x8
+ 287 00f7 05       		.byte	0x5
+ 288 00f8 63       		.byte	0x63
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 7
+
+
+ 289 00f9 0A010000 		.4byte	0x10a
+ 290 00fd 06       		.uleb128 0x6
+ 291 00fe 53000000 		.4byte	.LASF24
+ 292 0102 05       		.byte	0x5
+ 293 0103 65       		.byte	0x65
+ 294 0104 0A010000 		.4byte	0x10a
+ 295 0108 00       		.byte	0
+ 296 0109 00       		.byte	0
+ 297 010a 07       		.uleb128 0x7
+ 298 010b C3000000 		.4byte	0xc3
+ 299 010f 1A010000 		.4byte	0x11a
+ 300 0113 08       		.uleb128 0x8
+ 301 0114 EE000000 		.4byte	0xee
+ 302 0118 07       		.byte	0x7
+ 303 0119 00       		.byte	0
+ 304 011a 03       		.uleb128 0x3
+ 305 011b 26020000 		.4byte	.LASF23
+ 306 011f 05       		.byte	0x5
+ 307 0120 66       		.byte	0x66
+ 308 0121 F5000000 		.4byte	0xf5
+ 309 0125 05       		.uleb128 0x5
+ 310 0126 0C       		.byte	0xc
+ 311 0127 05       		.byte	0x5
+ 312 0128 75       		.byte	0x75
+ 313 0129 75010000 		.4byte	0x175
+ 314 012d 09       		.uleb128 0x9
+ 315 012e 696400   		.ascii	"id\000"
+ 316 0131 05       		.byte	0x5
+ 317 0132 77       		.byte	0x77
+ 318 0133 CE000000 		.4byte	0xce
+ 319 0137 00       		.byte	0
+ 320 0138 09       		.uleb128 0x9
+ 321 0139 72747200 		.ascii	"rtr\000"
+ 322 013d 05       		.byte	0x5
+ 323 013e 78       		.byte	0x78
+ 324 013f C3000000 		.4byte	0xc3
+ 325 0143 04       		.byte	0x4
+ 326 0144 09       		.uleb128 0x9
+ 327 0145 69646500 		.ascii	"ide\000"
+ 328 0149 05       		.byte	0x5
+ 329 014a 79       		.byte	0x79
+ 330 014b C3000000 		.4byte	0xc3
+ 331 014f 05       		.byte	0x5
+ 332 0150 09       		.uleb128 0x9
+ 333 0151 646C6300 		.ascii	"dlc\000"
+ 334 0155 05       		.byte	0x5
+ 335 0156 7A       		.byte	0x7a
+ 336 0157 C3000000 		.4byte	0xc3
+ 337 015b 06       		.byte	0x6
+ 338 015c 09       		.uleb128 0x9
+ 339 015d 69727100 		.ascii	"irq\000"
+ 340 0161 05       		.byte	0x5
+ 341 0162 7B       		.byte	0x7b
+ 342 0163 C3000000 		.4byte	0xc3
+ 343 0167 07       		.byte	0x7
+ 344 0168 09       		.uleb128 0x9
+ 345 0169 6D736700 		.ascii	"msg\000"
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 8
+
+
+ 346 016d 05       		.byte	0x5
+ 347 016e 7C       		.byte	0x7c
+ 348 016f 75010000 		.4byte	0x175
+ 349 0173 08       		.byte	0x8
+ 350 0174 00       		.byte	0
+ 351 0175 0A       		.uleb128 0xa
+ 352 0176 04       		.byte	0x4
+ 353 0177 1A010000 		.4byte	0x11a
+ 354 017b 03       		.uleb128 0x3
+ 355 017c 38000000 		.4byte	.LASF25
+ 356 0180 05       		.byte	0x5
+ 357 0181 7D       		.byte	0x7d
+ 358 0182 25010000 		.4byte	0x125
+ 359 0186 0B       		.uleb128 0xb
+ 360 0187 A2000000 		.4byte	0xa2
+ 361 018b 05       		.uleb128 0x5
+ 362 018c 10       		.byte	0x10
+ 363 018d 06       		.byte	0x6
+ 364 018e 0C       		.byte	0xc
+ 365 018f C3010000 		.4byte	0x1c3
+ 366 0193 06       		.uleb128 0x6
+ 367 0194 58000000 		.4byte	.LASF26
+ 368 0198 06       		.byte	0x6
+ 369 0199 0E       		.byte	0xe
+ 370 019a B8000000 		.4byte	0xb8
+ 371 019e 00       		.byte	0
+ 372 019f 09       		.uleb128 0x9
+ 373 01a0 696400   		.ascii	"id\000"
+ 374 01a3 06       		.byte	0x6
+ 375 01a4 0F       		.byte	0xf
+ 376 01a5 A2000000 		.4byte	0xa2
+ 377 01a9 04       		.byte	0x4
+ 378 01aa 06       		.uleb128 0x6
+ 379 01ab 62020000 		.4byte	.LASF27
+ 380 01af 06       		.byte	0x6
+ 381 01b0 10       		.byte	0x10
+ 382 01b1 97000000 		.4byte	0x97
+ 383 01b5 06       		.byte	0x6
+ 384 01b6 06       		.uleb128 0x6
+ 385 01b7 6B000000 		.4byte	.LASF28
+ 386 01bb 06       		.byte	0x6
+ 387 01bc 11       		.byte	0x11
+ 388 01bd C3010000 		.4byte	0x1c3
+ 389 01c1 07       		.byte	0x7
+ 390 01c2 00       		.byte	0
+ 391 01c3 07       		.uleb128 0x7
+ 392 01c4 97000000 		.4byte	0x97
+ 393 01c8 D3010000 		.4byte	0x1d3
+ 394 01cc 08       		.uleb128 0x8
+ 395 01cd EE000000 		.4byte	0xee
+ 396 01d1 07       		.byte	0x7
+ 397 01d2 00       		.byte	0
+ 398 01d3 03       		.uleb128 0x3
+ 399 01d4 1D010000 		.4byte	.LASF29
+ 400 01d8 06       		.byte	0x6
+ 401 01d9 12       		.byte	0x12
+ 402 01da 8B010000 		.4byte	0x18b
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 9
+
+
+ 403 01de 0C       		.uleb128 0xc
+ 404 01df 15000000 		.4byte	.LASF41
+ 405 01e3 01       		.byte	0x1
+ 406 01e4 0C       		.byte	0xc
+ 407 01e5 00000000 		.4byte	.LFB56
+ 408 01e9 12000000 		.4byte	.LFE56-.LFB56
+ 409 01ed 01       		.uleb128 0x1
+ 410 01ee 9C       		.byte	0x9c
+ 411 01ef 0D       		.uleb128 0xd
+ 412 01f0 45000000 		.4byte	.LASF42
+ 413 01f4 01       		.byte	0x1
+ 414 01f5 16       		.byte	0x16
+ 415 01f6 97000000 		.4byte	0x97
+ 416 01fa 00000000 		.4byte	.LFB57
+ 417 01fe 64000000 		.4byte	.LFE57-.LFB57
+ 418 0202 01       		.uleb128 0x1
+ 419 0203 9C       		.byte	0x9c
+ 420 0204 5A020000 		.4byte	0x25a
+ 421 0208 0E       		.uleb128 0xe
+ 422 0209 494400   		.ascii	"ID\000"
+ 423 020c 01       		.byte	0x1
+ 424 020d 16       		.byte	0x16
+ 425 020e A2000000 		.4byte	0xa2
+ 426 0212 02       		.uleb128 0x2
+ 427 0213 91       		.byte	0x91
+ 428 0214 5E       		.sleb128 -34
+ 429 0215 0E       		.uleb128 0xe
+ 430 0216 6D736700 		.ascii	"msg\000"
+ 431 021a 01       		.byte	0x1
+ 432 021b 16       		.byte	0x16
+ 433 021c 5A020000 		.4byte	0x25a
+ 434 0220 02       		.uleb128 0x2
+ 435 0221 91       		.byte	0x91
+ 436 0222 58       		.sleb128 -40
+ 437 0223 0F       		.uleb128 0xf
+ 438 0224 6900     		.ascii	"i\000"
+ 439 0226 01       		.byte	0x1
+ 440 0227 18       		.byte	0x18
+ 441 0228 97000000 		.4byte	0x97
+ 442 022c 02       		.uleb128 0x2
+ 443 022d 91       		.byte	0x91
+ 444 022e 77       		.sleb128 -9
+ 445 022f 10       		.uleb128 0x10
+ 446 0230 28000000 		.4byte	.LASF30
+ 447 0234 01       		.byte	0x1
+ 448 0235 18       		.byte	0x18
+ 449 0236 97000000 		.4byte	0x97
+ 450 023a 02       		.uleb128 0x2
+ 451 023b 91       		.byte	0x91
+ 452 023c 76       		.sleb128 -10
+ 453 023d 10       		.uleb128 0x10
+ 454 023e 00000000 		.4byte	.LASF31
+ 455 0242 01       		.byte	0x1
+ 456 0243 19       		.byte	0x19
+ 457 0244 7B010000 		.4byte	0x17b
+ 458 0248 02       		.uleb128 0x2
+ 459 0249 91       		.byte	0x91
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 10
+
+
+ 460 024a 68       		.sleb128 -24
+ 461 024b 10       		.uleb128 0x10
+ 462 024c 47010000 		.4byte	.LASF32
+ 463 0250 01       		.byte	0x1
+ 464 0251 1A       		.byte	0x1a
+ 465 0252 1A010000 		.4byte	0x11a
+ 466 0256 02       		.uleb128 0x2
+ 467 0257 91       		.byte	0x91
+ 468 0258 60       		.sleb128 -32
+ 469 0259 00       		.byte	0
+ 470 025a 0A       		.uleb128 0xa
+ 471 025b 04       		.byte	0x4
+ 472 025c 97000000 		.4byte	0x97
+ 473 0260 11       		.uleb128 0x11
+ 474 0261 C0000000 		.4byte	.LASF33
+ 475 0265 07       		.byte	0x7
+ 476 0266 1606     		.2byte	0x616
+ 477 0268 6C020000 		.4byte	0x26c
+ 478 026c 0B       		.uleb128 0xb
+ 479 026d AD000000 		.4byte	0xad
+ 480 0271 12       		.uleb128 0x12
+ 481 0272 08000000 		.4byte	.LASF34
+ 482 0276 01       		.byte	0x1
+ 483 0277 05       		.byte	0x5
+ 484 0278 82020000 		.4byte	0x282
+ 485 027c 05       		.uleb128 0x5
+ 486 027d 03       		.byte	0x3
+ 487 027e 00000000 		.4byte	test_message
+ 488 0282 13       		.uleb128 0x13
+ 489 0283 C3010000 		.4byte	0x1c3
+ 490 0287 07       		.uleb128 0x7
+ 491 0288 D3010000 		.4byte	0x1d3
+ 492 028c 97020000 		.4byte	0x297
+ 493 0290 08       		.uleb128 0x8
+ 494 0291 EE000000 		.4byte	0xee
+ 495 0295 7F       		.byte	0x7f
+ 496 0296 00       		.byte	0
+ 497 0297 12       		.uleb128 0x12
+ 498 0298 CD000000 		.4byte	.LASF35
+ 499 029c 01       		.byte	0x1
+ 500 029d 06       		.byte	0x6
+ 501 029e A8020000 		.4byte	0x2a8
+ 502 02a2 05       		.uleb128 0x5
+ 503 02a3 03       		.byte	0x3
+ 504 02a4 00000000 		.4byte	can_queue
+ 505 02a8 0B       		.uleb128 0xb
+ 506 02a9 87020000 		.4byte	0x287
+ 507 02ad 12       		.uleb128 0x12
+ 508 02ae 89000000 		.4byte	.LASF36
+ 509 02b2 01       		.byte	0x1
+ 510 02b3 07       		.byte	0x7
+ 511 02b4 86010000 		.4byte	0x186
+ 512 02b8 05       		.uleb128 0x5
+ 513 02b9 03       		.byte	0x3
+ 514 02ba 00000000 		.4byte	can_head
+ 515 02be 12       		.uleb128 0x12
+ 516 02bf 3B020000 		.4byte	.LASF37
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 11
+
+
+ 517 02c3 01       		.byte	0x1
+ 518 02c4 08       		.byte	0x8
+ 519 02c5 86010000 		.4byte	0x186
+ 520 02c9 05       		.uleb128 0x5
+ 521 02ca 03       		.byte	0x3
+ 522 02cb 00000000 		.4byte	can_tail
+ 523 02cf 00       		.byte	0
+ 524              		.section	.debug_abbrev,"",%progbits
+ 525              	.Ldebug_abbrev0:
+ 526 0000 01       		.uleb128 0x1
+ 527 0001 11       		.uleb128 0x11
+ 528 0002 01       		.byte	0x1
+ 529 0003 25       		.uleb128 0x25
+ 530 0004 0E       		.uleb128 0xe
+ 531 0005 13       		.uleb128 0x13
+ 532 0006 0B       		.uleb128 0xb
+ 533 0007 03       		.uleb128 0x3
+ 534 0008 0E       		.uleb128 0xe
+ 535 0009 1B       		.uleb128 0x1b
+ 536 000a 0E       		.uleb128 0xe
+ 537 000b 55       		.uleb128 0x55
+ 538 000c 17       		.uleb128 0x17
+ 539 000d 11       		.uleb128 0x11
+ 540 000e 01       		.uleb128 0x1
+ 541 000f 10       		.uleb128 0x10
+ 542 0010 17       		.uleb128 0x17
+ 543 0011 00       		.byte	0
+ 544 0012 00       		.byte	0
+ 545 0013 02       		.uleb128 0x2
+ 546 0014 24       		.uleb128 0x24
+ 547 0015 00       		.byte	0
+ 548 0016 0B       		.uleb128 0xb
+ 549 0017 0B       		.uleb128 0xb
+ 550 0018 3E       		.uleb128 0x3e
+ 551 0019 0B       		.uleb128 0xb
+ 552 001a 03       		.uleb128 0x3
+ 553 001b 0E       		.uleb128 0xe
+ 554 001c 00       		.byte	0
+ 555 001d 00       		.byte	0
+ 556 001e 03       		.uleb128 0x3
+ 557 001f 16       		.uleb128 0x16
+ 558 0020 00       		.byte	0
+ 559 0021 03       		.uleb128 0x3
+ 560 0022 0E       		.uleb128 0xe
+ 561 0023 3A       		.uleb128 0x3a
+ 562 0024 0B       		.uleb128 0xb
+ 563 0025 3B       		.uleb128 0x3b
+ 564 0026 0B       		.uleb128 0xb
+ 565 0027 49       		.uleb128 0x49
+ 566 0028 13       		.uleb128 0x13
+ 567 0029 00       		.byte	0
+ 568 002a 00       		.byte	0
+ 569 002b 04       		.uleb128 0x4
+ 570 002c 24       		.uleb128 0x24
+ 571 002d 00       		.byte	0
+ 572 002e 0B       		.uleb128 0xb
+ 573 002f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 12
+
+
+ 574 0030 3E       		.uleb128 0x3e
+ 575 0031 0B       		.uleb128 0xb
+ 576 0032 03       		.uleb128 0x3
+ 577 0033 08       		.uleb128 0x8
+ 578 0034 00       		.byte	0
+ 579 0035 00       		.byte	0
+ 580 0036 05       		.uleb128 0x5
+ 581 0037 13       		.uleb128 0x13
+ 582 0038 01       		.byte	0x1
+ 583 0039 0B       		.uleb128 0xb
+ 584 003a 0B       		.uleb128 0xb
+ 585 003b 3A       		.uleb128 0x3a
+ 586 003c 0B       		.uleb128 0xb
+ 587 003d 3B       		.uleb128 0x3b
+ 588 003e 0B       		.uleb128 0xb
+ 589 003f 01       		.uleb128 0x1
+ 590 0040 13       		.uleb128 0x13
+ 591 0041 00       		.byte	0
+ 592 0042 00       		.byte	0
+ 593 0043 06       		.uleb128 0x6
+ 594 0044 0D       		.uleb128 0xd
+ 595 0045 00       		.byte	0
+ 596 0046 03       		.uleb128 0x3
+ 597 0047 0E       		.uleb128 0xe
+ 598 0048 3A       		.uleb128 0x3a
+ 599 0049 0B       		.uleb128 0xb
+ 600 004a 3B       		.uleb128 0x3b
+ 601 004b 0B       		.uleb128 0xb
+ 602 004c 49       		.uleb128 0x49
+ 603 004d 13       		.uleb128 0x13
+ 604 004e 38       		.uleb128 0x38
+ 605 004f 0B       		.uleb128 0xb
+ 606 0050 00       		.byte	0
+ 607 0051 00       		.byte	0
+ 608 0052 07       		.uleb128 0x7
+ 609 0053 01       		.uleb128 0x1
+ 610 0054 01       		.byte	0x1
+ 611 0055 49       		.uleb128 0x49
+ 612 0056 13       		.uleb128 0x13
+ 613 0057 01       		.uleb128 0x1
+ 614 0058 13       		.uleb128 0x13
+ 615 0059 00       		.byte	0
+ 616 005a 00       		.byte	0
+ 617 005b 08       		.uleb128 0x8
+ 618 005c 21       		.uleb128 0x21
+ 619 005d 00       		.byte	0
+ 620 005e 49       		.uleb128 0x49
+ 621 005f 13       		.uleb128 0x13
+ 622 0060 2F       		.uleb128 0x2f
+ 623 0061 0B       		.uleb128 0xb
+ 624 0062 00       		.byte	0
+ 625 0063 00       		.byte	0
+ 626 0064 09       		.uleb128 0x9
+ 627 0065 0D       		.uleb128 0xd
+ 628 0066 00       		.byte	0
+ 629 0067 03       		.uleb128 0x3
+ 630 0068 08       		.uleb128 0x8
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 13
+
+
+ 631 0069 3A       		.uleb128 0x3a
+ 632 006a 0B       		.uleb128 0xb
+ 633 006b 3B       		.uleb128 0x3b
+ 634 006c 0B       		.uleb128 0xb
+ 635 006d 49       		.uleb128 0x49
+ 636 006e 13       		.uleb128 0x13
+ 637 006f 38       		.uleb128 0x38
+ 638 0070 0B       		.uleb128 0xb
+ 639 0071 00       		.byte	0
+ 640 0072 00       		.byte	0
+ 641 0073 0A       		.uleb128 0xa
+ 642 0074 0F       		.uleb128 0xf
+ 643 0075 00       		.byte	0
+ 644 0076 0B       		.uleb128 0xb
+ 645 0077 0B       		.uleb128 0xb
+ 646 0078 49       		.uleb128 0x49
+ 647 0079 13       		.uleb128 0x13
+ 648 007a 00       		.byte	0
+ 649 007b 00       		.byte	0
+ 650 007c 0B       		.uleb128 0xb
+ 651 007d 35       		.uleb128 0x35
+ 652 007e 00       		.byte	0
+ 653 007f 49       		.uleb128 0x49
+ 654 0080 13       		.uleb128 0x13
+ 655 0081 00       		.byte	0
+ 656 0082 00       		.byte	0
+ 657 0083 0C       		.uleb128 0xc
+ 658 0084 2E       		.uleb128 0x2e
+ 659 0085 00       		.byte	0
+ 660 0086 3F       		.uleb128 0x3f
+ 661 0087 19       		.uleb128 0x19
+ 662 0088 03       		.uleb128 0x3
+ 663 0089 0E       		.uleb128 0xe
+ 664 008a 3A       		.uleb128 0x3a
+ 665 008b 0B       		.uleb128 0xb
+ 666 008c 3B       		.uleb128 0x3b
+ 667 008d 0B       		.uleb128 0xb
+ 668 008e 11       		.uleb128 0x11
+ 669 008f 01       		.uleb128 0x1
+ 670 0090 12       		.uleb128 0x12
+ 671 0091 06       		.uleb128 0x6
+ 672 0092 40       		.uleb128 0x40
+ 673 0093 18       		.uleb128 0x18
+ 674 0094 9642     		.uleb128 0x2116
+ 675 0096 19       		.uleb128 0x19
+ 676 0097 00       		.byte	0
+ 677 0098 00       		.byte	0
+ 678 0099 0D       		.uleb128 0xd
+ 679 009a 2E       		.uleb128 0x2e
+ 680 009b 01       		.byte	0x1
+ 681 009c 3F       		.uleb128 0x3f
+ 682 009d 19       		.uleb128 0x19
+ 683 009e 03       		.uleb128 0x3
+ 684 009f 0E       		.uleb128 0xe
+ 685 00a0 3A       		.uleb128 0x3a
+ 686 00a1 0B       		.uleb128 0xb
+ 687 00a2 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 14
+
+
+ 688 00a3 0B       		.uleb128 0xb
+ 689 00a4 27       		.uleb128 0x27
+ 690 00a5 19       		.uleb128 0x19
+ 691 00a6 49       		.uleb128 0x49
+ 692 00a7 13       		.uleb128 0x13
+ 693 00a8 11       		.uleb128 0x11
+ 694 00a9 01       		.uleb128 0x1
+ 695 00aa 12       		.uleb128 0x12
+ 696 00ab 06       		.uleb128 0x6
+ 697 00ac 40       		.uleb128 0x40
+ 698 00ad 18       		.uleb128 0x18
+ 699 00ae 9642     		.uleb128 0x2116
+ 700 00b0 19       		.uleb128 0x19
+ 701 00b1 01       		.uleb128 0x1
+ 702 00b2 13       		.uleb128 0x13
+ 703 00b3 00       		.byte	0
+ 704 00b4 00       		.byte	0
+ 705 00b5 0E       		.uleb128 0xe
+ 706 00b6 05       		.uleb128 0x5
+ 707 00b7 00       		.byte	0
+ 708 00b8 03       		.uleb128 0x3
+ 709 00b9 08       		.uleb128 0x8
+ 710 00ba 3A       		.uleb128 0x3a
+ 711 00bb 0B       		.uleb128 0xb
+ 712 00bc 3B       		.uleb128 0x3b
+ 713 00bd 0B       		.uleb128 0xb
+ 714 00be 49       		.uleb128 0x49
+ 715 00bf 13       		.uleb128 0x13
+ 716 00c0 02       		.uleb128 0x2
+ 717 00c1 18       		.uleb128 0x18
+ 718 00c2 00       		.byte	0
+ 719 00c3 00       		.byte	0
+ 720 00c4 0F       		.uleb128 0xf
+ 721 00c5 34       		.uleb128 0x34
+ 722 00c6 00       		.byte	0
+ 723 00c7 03       		.uleb128 0x3
+ 724 00c8 08       		.uleb128 0x8
+ 725 00c9 3A       		.uleb128 0x3a
+ 726 00ca 0B       		.uleb128 0xb
+ 727 00cb 3B       		.uleb128 0x3b
+ 728 00cc 0B       		.uleb128 0xb
+ 729 00cd 49       		.uleb128 0x49
+ 730 00ce 13       		.uleb128 0x13
+ 731 00cf 02       		.uleb128 0x2
+ 732 00d0 18       		.uleb128 0x18
+ 733 00d1 00       		.byte	0
+ 734 00d2 00       		.byte	0
+ 735 00d3 10       		.uleb128 0x10
+ 736 00d4 34       		.uleb128 0x34
+ 737 00d5 00       		.byte	0
+ 738 00d6 03       		.uleb128 0x3
+ 739 00d7 0E       		.uleb128 0xe
+ 740 00d8 3A       		.uleb128 0x3a
+ 741 00d9 0B       		.uleb128 0xb
+ 742 00da 3B       		.uleb128 0x3b
+ 743 00db 0B       		.uleb128 0xb
+ 744 00dc 49       		.uleb128 0x49
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 15
+
+
+ 745 00dd 13       		.uleb128 0x13
+ 746 00de 02       		.uleb128 0x2
+ 747 00df 18       		.uleb128 0x18
+ 748 00e0 00       		.byte	0
+ 749 00e1 00       		.byte	0
+ 750 00e2 11       		.uleb128 0x11
+ 751 00e3 34       		.uleb128 0x34
+ 752 00e4 00       		.byte	0
+ 753 00e5 03       		.uleb128 0x3
+ 754 00e6 0E       		.uleb128 0xe
+ 755 00e7 3A       		.uleb128 0x3a
+ 756 00e8 0B       		.uleb128 0xb
+ 757 00e9 3B       		.uleb128 0x3b
+ 758 00ea 05       		.uleb128 0x5
+ 759 00eb 49       		.uleb128 0x49
+ 760 00ec 13       		.uleb128 0x13
+ 761 00ed 3F       		.uleb128 0x3f
+ 762 00ee 19       		.uleb128 0x19
+ 763 00ef 3C       		.uleb128 0x3c
+ 764 00f0 19       		.uleb128 0x19
+ 765 00f1 00       		.byte	0
+ 766 00f2 00       		.byte	0
+ 767 00f3 12       		.uleb128 0x12
+ 768 00f4 34       		.uleb128 0x34
+ 769 00f5 00       		.byte	0
+ 770 00f6 03       		.uleb128 0x3
+ 771 00f7 0E       		.uleb128 0xe
+ 772 00f8 3A       		.uleb128 0x3a
+ 773 00f9 0B       		.uleb128 0xb
+ 774 00fa 3B       		.uleb128 0x3b
+ 775 00fb 0B       		.uleb128 0xb
+ 776 00fc 49       		.uleb128 0x49
+ 777 00fd 13       		.uleb128 0x13
+ 778 00fe 3F       		.uleb128 0x3f
+ 779 00ff 19       		.uleb128 0x19
+ 780 0100 02       		.uleb128 0x2
+ 781 0101 18       		.uleb128 0x18
+ 782 0102 00       		.byte	0
+ 783 0103 00       		.byte	0
+ 784 0104 13       		.uleb128 0x13
+ 785 0105 26       		.uleb128 0x26
+ 786 0106 00       		.byte	0
+ 787 0107 49       		.uleb128 0x49
+ 788 0108 13       		.uleb128 0x13
+ 789 0109 00       		.byte	0
+ 790 010a 00       		.byte	0
+ 791 010b 00       		.byte	0
+ 792              		.section	.debug_aranges,"",%progbits
+ 793 0000 24000000 		.4byte	0x24
+ 794 0004 0200     		.2byte	0x2
+ 795 0006 00000000 		.4byte	.Ldebug_info0
+ 796 000a 04       		.byte	0x4
+ 797 000b 00       		.byte	0
+ 798 000c 0000     		.2byte	0
+ 799 000e 0000     		.2byte	0
+ 800 0010 00000000 		.4byte	.LFB56
+ 801 0014 12000000 		.4byte	.LFE56-.LFB56
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 16
+
+
+ 802 0018 00000000 		.4byte	.LFB57
+ 803 001c 64000000 		.4byte	.LFE57-.LFB57
+ 804 0020 00000000 		.4byte	0
+ 805 0024 00000000 		.4byte	0
+ 806              		.section	.debug_ranges,"",%progbits
+ 807              	.Ldebug_ranges0:
+ 808 0000 00000000 		.4byte	.LFB56
+ 809 0004 12000000 		.4byte	.LFE56
+ 810 0008 00000000 		.4byte	.LFB57
+ 811 000c 64000000 		.4byte	.LFE57
+ 812 0010 00000000 		.4byte	0
+ 813 0014 00000000 		.4byte	0
+ 814              		.section	.debug_line,"",%progbits
+ 815              	.Ldebug_line0:
+ 816 0000 98010000 		.section	.debug_str,"MS",%progbits,1
+ 816      02005301 
+ 816      00000201 
+ 816      FB0E0D00 
+ 816      01010101 
+ 817              	.LASF31:
+ 818 0000 6D657373 		.ascii	"message\000"
+ 818      61676500 
+ 819              	.LASF34:
+ 820 0008 74657374 		.ascii	"test_message\000"
+ 820      5F6D6573 
+ 820      73616765 
+ 820      00
+ 821              	.LASF41:
+ 822 0015 63616E5F 		.ascii	"can_init\000"
+ 822      696E6974 
+ 822      00
+ 823              	.LASF3:
+ 824 001e 5F5F7569 		.ascii	"__uint8_t\000"
+ 824      6E74385F 
+ 824      7400
+ 825              	.LASF30:
+ 826 0028 73746174 		.ascii	"state\000"
+ 826      6500
+ 827              	.LASF6:
+ 828 002e 5F5F696E 		.ascii	"__int32_t\000"
+ 828      7433325F 
+ 828      7400
+ 829              	.LASF25:
+ 830 0038 43414E5F 		.ascii	"CAN_1_TX_MSG\000"
+ 830      315F5458 
+ 830      5F4D5347 
+ 830      00
+ 831              	.LASF42:
+ 832 0045 63616E5F 		.ascii	"can_test_send\000"
+ 832      74657374 
+ 832      5F73656E 
+ 832      6400
+ 833              	.LASF24:
+ 834 0053 62797465 		.ascii	"byte\000"
+ 834      00
+ 835              	.LASF26:
+ 836 0058 6D696C6C 		.ascii	"millicounter\000"
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 17
+
+
+ 836      69636F75 
+ 836      6E746572 
+ 836      00
+ 837              	.LASF19:
+ 838 0065 666C6F61 		.ascii	"float\000"
+ 838      7400
+ 839              	.LASF28:
+ 840 006b 64617461 		.ascii	"data\000"
+ 840      00
+ 841              	.LASF1:
+ 842 0070 756E7369 		.ascii	"unsigned char\000"
+ 842      676E6564 
+ 842      20636861 
+ 842      7200
+ 843              	.LASF8:
+ 844 007e 5F5F7569 		.ascii	"__uint32_t\000"
+ 844      6E743332 
+ 844      5F7400
+ 845              	.LASF36:
+ 846 0089 63616E5F 		.ascii	"can_head\000"
+ 846      68656164 
+ 846      00
+ 847              	.LASF9:
+ 848 0092 6C6F6E67 		.ascii	"long unsigned int\000"
+ 848      20756E73 
+ 848      69676E65 
+ 848      6420696E 
+ 848      7400
+ 849              	.LASF5:
+ 850 00a4 73686F72 		.ascii	"short unsigned int\000"
+ 850      7420756E 
+ 850      7369676E 
+ 850      65642069 
+ 850      6E7400
+ 851              	.LASF7:
+ 852 00b7 6C6F6E67 		.ascii	"long int\000"
+ 852      20696E74 
+ 852      00
+ 853              	.LASF33:
+ 854 00c0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 854      52784275 
+ 854      66666572 
+ 854      00
+ 855              	.LASF35:
+ 856 00cd 63616E5F 		.ascii	"can_queue\000"
+ 856      71756575 
+ 856      6500
+ 857              	.LASF39:
+ 858 00d7 2E5C6361 		.ascii	".\\can_manager.c\000"
+ 858      6E5F6D61 
+ 858      6E616765 
+ 858      722E6300 
+ 859              	.LASF4:
+ 860 00e7 5F5F7569 		.ascii	"__uint16_t\000"
+ 860      6E743136 
+ 860      5F7400
+ 861              	.LASF20:
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 18
+
+
+ 862 00f2 646F7562 		.ascii	"double\000"
+ 862      6C6500
+ 863              	.LASF17:
+ 864 00f9 75696E74 		.ascii	"uint8\000"
+ 864      3800
+ 865              	.LASF2:
+ 866 00ff 73686F72 		.ascii	"short int\000"
+ 866      7420696E 
+ 866      7400
+ 867              	.LASF18:
+ 868 0109 75696E74 		.ascii	"uint32\000"
+ 868      333200
+ 869              	.LASF12:
+ 870 0110 756E7369 		.ascii	"unsigned int\000"
+ 870      676E6564 
+ 870      20696E74 
+ 870      00
+ 871              	.LASF29:
+ 872 011d 44617461 		.ascii	"DataPacket\000"
+ 872      5061636B 
+ 872      657400
+ 873              	.LASF11:
+ 874 0128 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 874      206C6F6E 
+ 874      6720756E 
+ 874      7369676E 
+ 874      65642069 
+ 875              	.LASF13:
+ 876 013f 75696E74 		.ascii	"uint8_t\000"
+ 876      385F7400 
+ 877              	.LASF32:
+ 878 0147 7061796C 		.ascii	"payload\000"
+ 878      6F616400 
+ 879              	.LASF38:
+ 880 014f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 880      4320342E 
+ 880      382E3420 
+ 880      32303134 
+ 880      30353236 
+ 881 0182 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 881      20726576 
+ 881      6973696F 
+ 881      6E203231 
+ 881      31333538 
+ 882 01b5 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 882      66756E63 
+ 882      74696F6E 
+ 882      2D736563 
+ 882      74696F6E 
+ 883              	.LASF15:
+ 884 01cb 696E7433 		.ascii	"int32_t\000"
+ 884      325F7400 
+ 885              	.LASF22:
+ 886 01d3 73697A65 		.ascii	"sizetype\000"
+ 886      74797065 
+ 886      00
+ 887              	.LASF10:
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\cc2eHPMJ.s 			page 19
+
+
+ 888 01dc 6C6F6E67 		.ascii	"long long int\000"
+ 888      206C6F6E 
+ 888      6720696E 
+ 888      7400
+ 889              	.LASF40:
+ 890 01ea 443A5C77 		.ascii	"D:\\workspace\\Node-Wolrus\\Node-Wolrus\\Node-Wolru"
+ 890      6F726B73 
+ 890      70616365 
+ 890      5C4E6F64 
+ 890      652D576F 
+ 891 0219 732E6379 		.ascii	"s.cydsn\000"
+ 891      64736E00 
+ 892              	.LASF21:
+ 893 0221 63686172 		.ascii	"char\000"
+ 893      00
+ 894              	.LASF23:
+ 895 0226 43414E5F 		.ascii	"CAN_1_DATA_BYTES_MSG\000"
+ 895      315F4441 
+ 895      54415F42 
+ 895      59544553 
+ 895      5F4D5347 
+ 896              	.LASF37:
+ 897 023b 63616E5F 		.ascii	"can_tail\000"
+ 897      7461696C 
+ 897      00
+ 898              	.LASF14:
+ 899 0244 75696E74 		.ascii	"uint16_t\000"
+ 899      31365F74 
+ 899      00
+ 900              	.LASF16:
+ 901 024d 75696E74 		.ascii	"uint32_t\000"
+ 901      33325F74 
+ 901      00
+ 902              	.LASF0:
+ 903 0256 7369676E 		.ascii	"signed char\000"
+ 903      65642063 
+ 903      68617200 
+ 904              	.LASF27:
+ 905 0262 6C656E67 		.ascii	"length\000"
+ 905      746800
+ 906              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
