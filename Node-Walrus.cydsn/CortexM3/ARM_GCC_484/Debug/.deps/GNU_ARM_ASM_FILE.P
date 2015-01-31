@@ -1,10 +1,10 @@
-D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/CortexM3/ARM_GCC_484/Debug/CyBootAsmGnu.o : D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/cydevicegnu.inc D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/cyfittergnu.inc D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s 
+D:/workspace/Node-Walrus/Node-Walrus.cydsn/CortexM3/ARM_GCC_484/Debug/CyBootAsmGnu.o : D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/cydevicegnu.inc D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/cyfittergnu.inc D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s 
 
-D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
 
-D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
 
-D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
 
-D:/workspace/Node-Wolrus/Node-Wolrus/Node-Wolrus.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+D:/workspace/Node-Walrus/Node-Walrus.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
 

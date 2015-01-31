@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
   29:.\Generated_Source\PSoC5/CAN_1_INT.c ****     * FUNCTION NAME:   CAN_1_ArbLost
   30:.\Generated_Source\PSoC5/CAN_1_INT.c ****     ********************************************************************************
   31:.\Generated_Source\PSoC5/CAN_1_INT.c ****     *
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 2
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/CAN_1_INT.c ****     * Summary:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
   86:.\Generated_Source\PSoC5/CAN_1_INT.c **** 
   87:.\Generated_Source\PSoC5/CAN_1_INT.c ****         /* `#END` */
   88:.\Generated_Source\PSoC5/CAN_1_INT.c ****     }
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 3
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/CAN_1_INT.c ****     
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  143:.\Generated_Source\PSoC5/CAN_1_INT.c ****     *
  144:.\Generated_Source\PSoC5/CAN_1_INT.c ****     *******************************************************************************/
  145:.\Generated_Source\PSoC5/CAN_1_INT.c ****     void CAN_1_BitStuffErrorIsr(void) 
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 4
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 4
 
 
  146:.\Generated_Source\PSoC5/CAN_1_INT.c ****     {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  200:.\Generated_Source\PSoC5/CAN_1_INT.c ****     * Parameters:
  201:.\Generated_Source\PSoC5/CAN_1_INT.c ****     *  None.
  202:.\Generated_Source\PSoC5/CAN_1_INT.c ****     *
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 5
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 5
 
 
  203:.\Generated_Source\PSoC5/CAN_1_INT.c ****     * Return:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  257:.\Generated_Source\PSoC5/CAN_1_INT.c ****     * FUNCTION NAME:   CAN_1_BusOff
  258:.\Generated_Source\PSoC5/CAN_1_INT.c ****     ********************************************************************************
  259:.\Generated_Source\PSoC5/CAN_1_INT.c ****     *
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 6
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 6
 
 
  260:.\Generated_Source\PSoC5/CAN_1_INT.c ****     * Summary:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  314:.\Generated_Source\PSoC5/CAN_1_INT.c **** 
  315:.\Generated_Source\PSoC5/CAN_1_INT.c ****         /* `#END` */
  316:.\Generated_Source\PSoC5/CAN_1_INT.c ****     }
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 7
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 7
 
 
  317:.\Generated_Source\PSoC5/CAN_1_INT.c ****     
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  371:.\Generated_Source\PSoC5/CAN_1_INT.c ****     *******************************************************************************/
  372:.\Generated_Source\PSoC5/CAN_1_INT.c ****     void CAN_1_MsgRXIsr(void) 
  373:.\Generated_Source\PSoC5/CAN_1_INT.c ****     {
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 8
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 8
 
 
  374:.\Generated_Source\PSoC5/CAN_1_INT.c ****         uint8 i;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  428:.\Generated_Source\PSoC5/CAN_1_INT.c **** *  None.
  429:.\Generated_Source\PSoC5/CAN_1_INT.c **** *
  430:.\Generated_Source\PSoC5/CAN_1_INT.c **** *******************************************************************************/
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 9
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 9
 
 
  431:.\Generated_Source\PSoC5/CAN_1_INT.c **** CY_ISR(CAN_1_ISR)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  475:.\Generated_Source\PSoC5/CAN_1_INT.c ****     #endif /* CAN_1_STUFF_ERR && CAN_1_STUFF_ERR_USE_HELPER */
  476:.\Generated_Source\PSoC5/CAN_1_INT.c ****     
  477:.\Generated_Source\PSoC5/CAN_1_INT.c ****     /* ACK Error */
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 10
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 10
 
 
  478:.\Generated_Source\PSoC5/CAN_1_INT.c ****     #if (CAN_1_ACK_ERR && (CAN_1_ACK_ERR_USE_HELPER || \
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  532:.\Generated_Source\PSoC5/CAN_1_INT.c ****         }
  533:.\Generated_Source\PSoC5/CAN_1_INT.c ****     #endif /* CAN_1_TX_MESSAGE && CAN_1_TX_MESSAGE_USE_HELPER */
  534:.\Generated_Source\PSoC5/CAN_1_INT.c ****     
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 11
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 11
 
 
  535:.\Generated_Source\PSoC5/CAN_1_INT.c ****     /* RX Message Available */
@@ -630,7 +630,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
   51 0006 00000000 		.4byte	.Ldebug_abbrev0
   52 000a 04       		.byte	0x4
   53 000b 01       		.uleb128 0x1
-  54 000c FC000000 		.4byte	.LASF13
+  54 000c F0000000 		.4byte	.LASF13
   55 0010 01       		.byte	0x1
   56 0011 0E000000 		.4byte	.LASF14
   57 0015 69000000 		.4byte	.LASF15
@@ -640,25 +640,25 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
   61 0025 02       		.uleb128 0x2
   62 0026 01       		.byte	0x1
   63 0027 06       		.byte	0x6
-  64 0028 E0000000 		.4byte	.LASF0
+  64 0028 D4000000 		.4byte	.LASF0
   65 002c 02       		.uleb128 0x2
   66 002d 01       		.byte	0x1
   67 002e 08       		.byte	0x8
-  68 002f A0000000 		.4byte	.LASF1
+  68 002f 94000000 		.4byte	.LASF1
   69 0033 02       		.uleb128 0x2
   70 0034 02       		.byte	0x2
   71 0035 05       		.byte	0x5
-  72 0036 F2000000 		.4byte	.LASF2
+  72 0036 E6000000 		.4byte	.LASF2
   73 003a 02       		.uleb128 0x2
   74 003b 02       		.byte	0x2
   75 003c 07       		.byte	0x7
-  76 003d CD000000 		.4byte	.LASF3
+  76 003d C1000000 		.4byte	.LASF3
   77 0041 02       		.uleb128 0x2
   78 0042 04       		.byte	0x4
   79 0043 05       		.byte	0x5
-  80 0044 B3000000 		.4byte	.LASF4
+  80 0044 A7000000 		.4byte	.LASF4
   81 0048 02       		.uleb128 0x2
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 12
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 12
 
 
   82 0049 04       		.byte	0x4
@@ -683,21 +683,21 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  101 006b 02       		.uleb128 0x2
  102 006c 04       		.byte	0x4
  103 006d 04       		.byte	0x4
- 104 006e EC000000 		.4byte	.LASF9
+ 104 006e E0000000 		.4byte	.LASF9
  105 0072 02       		.uleb128 0x2
  106 0073 08       		.byte	0x8
  107 0074 04       		.byte	0x4
- 108 0075 BC000000 		.4byte	.LASF10
+ 108 0075 B0000000 		.4byte	.LASF10
  109 0079 02       		.uleb128 0x2
  110 007a 01       		.byte	0x1
  111 007b 08       		.byte	0x8
- 112 007c AE000000 		.4byte	.LASF11
+ 112 007c A2000000 		.4byte	.LASF11
  113 0080 02       		.uleb128 0x2
  114 0081 04       		.byte	0x4
  115 0082 07       		.byte	0x7
- 116 0083 78010000 		.4byte	.LASF12
+ 116 0083 6C010000 		.4byte	.LASF12
  117 0087 04       		.uleb128 0x4
- 118 0088 C3000000 		.4byte	.LASF16
+ 118 0088 B7000000 		.4byte	.LASF16
  119 008c 01       		.byte	0x1
  120 008d AF01     		.2byte	0x1af
  121 008f 00000000 		.4byte	.LFB0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  136 0008 0E       		.uleb128 0xe
  137 0009 1B       		.uleb128 0x1b
  138 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 13
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 13
 
 
  139 000b 55       		.uleb128 0x55
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  193              		.section	.debug_aranges,"",%progbits
  194 0000 1C000000 		.4byte	0x1c
  195 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 14
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 14
 
 
  196 0006 00000000 		.4byte	.Ldebug_info0
@@ -832,73 +832,68 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 1
  223      7369676E 
  223      65642069 
  224              	.LASF15:
- 225 0069 443A5C77 		.ascii	"D:\\workspace\\Node-Wolrus\\Node-Wolrus\\Node-Wolru"
+ 225 0069 443A5C77 		.ascii	"D:\\workspace\\Node-Walrus\\Node-Walrus.cydsn\000"
  225      6F726B73 
  225      70616365 
  225      5C4E6F64 
- 225      652D576F 
- 226 0098 732E6379 		.ascii	"s.cydsn\000"
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 15
+ 225      652D5761 
+ 226              	.LASF1:
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccV2JhNW.s 			page 15
 
 
- 226      64736E00 
- 227              	.LASF1:
- 228 00a0 756E7369 		.ascii	"unsigned char\000"
- 228      676E6564 
- 228      20636861 
- 228      7200
- 229              	.LASF11:
- 230 00ae 63686172 		.ascii	"char\000"
- 230      00
- 231              	.LASF4:
- 232 00b3 6C6F6E67 		.ascii	"long int\000"
- 232      20696E74 
- 232      00
- 233              	.LASF10:
- 234 00bc 646F7562 		.ascii	"double\000"
- 234      6C6500
- 235              	.LASF16:
- 236 00c3 43414E5F 		.ascii	"CAN_1_ISR\000"
- 236      315F4953 
- 236      5200
- 237              	.LASF3:
- 238 00cd 73686F72 		.ascii	"short unsigned int\000"
- 238      7420756E 
- 238      7369676E 
- 238      65642069 
- 238      6E7400
- 239              	.LASF0:
- 240 00e0 7369676E 		.ascii	"signed char\000"
- 240      65642063 
- 240      68617200 
- 241              	.LASF9:
- 242 00ec 666C6F61 		.ascii	"float\000"
- 242      7400
- 243              	.LASF2:
- 244 00f2 73686F72 		.ascii	"short int\000"
- 244      7420696E 
- 244      7400
- 245              	.LASF13:
- 246 00fc 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 246      4320342E 
- 246      382E3420 
- 246      32303134 
- 246      30353236 
- 247 012f 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 247      20726576 
- 247      6973696F 
- 247      6E203231 
- 247      31333538 
- 248 0162 30202D66 		.ascii	"0 -ffunction-sections\000"
- 248      66756E63 
- 248      74696F6E 
- 248      2D736563 
- 248      74696F6E 
- 249              	.LASF12:
- 250 0178 73697A65 		.ascii	"sizetype\000"
- 250      74797065 
- 250      00
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccwnDwHg.s 			page 16
-
-
- 251              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 227 0094 756E7369 		.ascii	"unsigned char\000"
+ 227      676E6564 
+ 227      20636861 
+ 227      7200
+ 228              	.LASF11:
+ 229 00a2 63686172 		.ascii	"char\000"
+ 229      00
+ 230              	.LASF4:
+ 231 00a7 6C6F6E67 		.ascii	"long int\000"
+ 231      20696E74 
+ 231      00
+ 232              	.LASF10:
+ 233 00b0 646F7562 		.ascii	"double\000"
+ 233      6C6500
+ 234              	.LASF16:
+ 235 00b7 43414E5F 		.ascii	"CAN_1_ISR\000"
+ 235      315F4953 
+ 235      5200
+ 236              	.LASF3:
+ 237 00c1 73686F72 		.ascii	"short unsigned int\000"
+ 237      7420756E 
+ 237      7369676E 
+ 237      65642069 
+ 237      6E7400
+ 238              	.LASF0:
+ 239 00d4 7369676E 		.ascii	"signed char\000"
+ 239      65642063 
+ 239      68617200 
+ 240              	.LASF9:
+ 241 00e0 666C6F61 		.ascii	"float\000"
+ 241      7400
+ 242              	.LASF2:
+ 243 00e6 73686F72 		.ascii	"short int\000"
+ 243      7420696E 
+ 243      7400
+ 244              	.LASF13:
+ 245 00f0 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 245      4320342E 
+ 245      382E3420 
+ 245      32303134 
+ 245      30353236 
+ 246 0123 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 246      20726576 
+ 246      6973696F 
+ 246      6E203231 
+ 246      31333538 
+ 247 0156 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 247      66756E63 
+ 247      74696F6E 
+ 247      2D736563 
+ 247      74696F6E 
+ 248              	.LASF12:
+ 249 016c 73697A65 		.ascii	"sizetype\000"
+ 249      74797065 
+ 249      00
+ 250              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

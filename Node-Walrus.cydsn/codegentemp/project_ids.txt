@@ -1,0 +1,5 @@
+D:\workspace\Node-Walrus\Node-Walrus.cydsn\Node-Walrus.cyprj|671c6e6f-84d4-45e4-9b16-a78db17160f9
+D:\Software\PSOC\PSoC Creator\3.1\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|089f3dec-2e58-471f-a37c-f006db3c0ad7
+D:\Software\PSOC\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|465bf209-57ea-44ea-9f9a-1647bb7e51a0
+D:\Software\PSOC\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|a3bdf2e2-5ca4-4184-a862-a309bfc54201
+D:\Software\PSOC\PSoC Creator\3.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|4d9e5234-76aa-46fd-84cf-ef7af7dfc908

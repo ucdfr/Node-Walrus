@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
   55 001f 40       		.byte	64
   56 0020 03       		.byte	3
   57 0021 46       		.byte	70
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 2
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 2
 
 
   58 0022 01       		.byte	1
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  112 0058 A7       		.byte	-89
  113 0059 10       		.byte	16
  114 005a 8F       		.byte	-113
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 3
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 3
 
 
  115 005b 10       		.byte	16
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  169              	cy_meta_flashprotect:
  170 0000 00000000 		.space	256
  170      00000000 
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 4
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 4
 
 
  170      00000000 
@@ -213,15 +213,15 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  197 0006 00000000 		.4byte	.Ldebug_abbrev0
  198 000a 04       		.byte	0x4
  199 000b 01       		.uleb128 0x1
- 200 000c B8000000 		.4byte	.LASF18
+ 200 000c D1000000 		.4byte	.LASF18
  201 0010 01       		.byte	0x1
  202 0011 00000000 		.4byte	.LASF19
- 203 0015 6E010000 		.4byte	.LASF20
+ 203 0015 82000000 		.4byte	.LASF20
  204 0019 00000000 		.4byte	.Ldebug_line0
  205 001d 02       		.uleb128 0x2
  206 001e 01       		.byte	0x1
  207 001f 06       		.byte	0x6
- 208 0020 C3010000 		.4byte	.LASF0
+ 208 0020 B7010000 		.4byte	.LASF0
  209 0024 02       		.uleb128 0x2
  210 0025 01       		.byte	0x1
  211 0026 08       		.byte	0x8
@@ -229,7 +229,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  213 002b 02       		.uleb128 0x2
  214 002c 02       		.byte	0x2
  215 002d 05       		.byte	0x5
- 216 002e AA010000 		.4byte	.LASF2
+ 216 002e 9E010000 		.4byte	.LASF2
  217 0032 02       		.uleb128 0x2
  218 0033 02       		.byte	0x2
  219 0034 07       		.byte	0x7
@@ -237,8 +237,8 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  221 0039 02       		.uleb128 0x2
  222 003a 04       		.byte	0x4
  223 003b 05       		.byte	0x5
- 224 003c BA010000 		.4byte	.LASF4
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 5
+ 224 003c AE010000 		.4byte	.LASF4
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 5
 
 
  225 0040 02       		.uleb128 0x2
@@ -248,11 +248,11 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  229 0047 02       		.uleb128 0x2
  230 0048 08       		.byte	0x8
  231 0049 05       		.byte	0x5
- 232 004a 60010000 		.4byte	.LASF6
+ 232 004a 8B010000 		.4byte	.LASF6
  233 004e 02       		.uleb128 0x2
  234 004f 08       		.byte	0x8
  235 0050 07       		.byte	0x7
- 236 0051 A1000000 		.4byte	.LASF7
+ 236 0051 BA000000 		.4byte	.LASF7
  237 0055 03       		.uleb128 0x3
  238 0056 04       		.byte	0x4
  239 0057 05       		.byte	0x5
@@ -260,9 +260,9 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  241 005c 02       		.uleb128 0x2
  242 005d 04       		.byte	0x4
  243 005e 07       		.byte	0x7
- 244 005f 94000000 		.4byte	.LASF8
+ 244 005f AD000000 		.4byte	.LASF8
  245 0063 04       		.uleb128 0x4
- 246 0064 B4010000 		.4byte	.LASF21
+ 246 0064 A8010000 		.4byte	.LASF21
  247 0068 02       		.byte	0x2
  248 0069 A1       		.byte	0xa1
  249 006a 24000000 		.4byte	0x24
@@ -277,7 +277,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  258 007c 02       		.uleb128 0x2
  259 007d 01       		.byte	0x1
  260 007e 08       		.byte	0x8
- 261 007f A5010000 		.4byte	.LASF11
+ 261 007f 99010000 		.4byte	.LASF11
  262 0083 05       		.uleb128 0x5
  263 0084 63000000 		.4byte	0x63
  264 0088 93000000 		.4byte	0x93
@@ -288,9 +288,9 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  269 0093 02       		.uleb128 0x2
  270 0094 04       		.byte	0x4
  271 0095 07       		.byte	0x7
- 272 0096 57010000 		.4byte	.LASF12
+ 272 0096 70010000 		.4byte	.LASF12
  273 009a 07       		.uleb128 0x7
- 274 009b 82000000 		.4byte	.LASF13
+ 274 009b 79010000 		.4byte	.LASF13
  275 009f 01       		.byte	0x1
  276 00a0 1C       		.byte	0x1c
  277 00a1 AB000000 		.4byte	0xab
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  279 00a6 03       		.byte	0x3
  280 00a7 00000000 		.4byte	cy_meta_configecc
  281 00ab 08       		.uleb128 0x8
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 6
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 6
 
 
  282 00ac 83000000 		.4byte	0x83
@@ -320,7 +320,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  298 00d1 08       		.uleb128 0x8
  299 00d2 B0000000 		.4byte	0xb0
  300 00d6 07       		.uleb128 0x7
- 301 00d7 49010000 		.4byte	.LASF15
+ 301 00d7 62010000 		.4byte	.LASF15
  302 00db 01       		.byte	0x1
  303 00dc 40       		.byte	0x40
  304 00dd E7000000 		.4byte	0xe7
@@ -337,7 +337,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  315 00fa FF       		.byte	0xff
  316 00fb 00       		.byte	0
  317 00fc 07       		.uleb128 0x7
- 318 00fd 34010000 		.4byte	.LASF16
+ 318 00fd 4D010000 		.4byte	.LASF16
  319 0101 01       		.byte	0x1
  320 0102 4B       		.byte	0x4b
  321 0103 0D010000 		.4byte	0x10d
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  336 0127 01       		.byte	0x1
  337 0128 75       		.byte	0x75
  338 0129 33010000 		.4byte	0x133
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 7
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 7
 
 
  339 012d 05       		.uleb128 0x5
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  393 002e 49       		.uleb128 0x49
  394 002f 13       		.uleb128 0x13
  395 0030 00       		.byte	0
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 8
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 8
 
 
  396 0031 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  450              		.section	.debug_line,"",%progbits
  451              	.Ldebug_line0:
  452 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 9
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 9
 
 
  452      02004900 
@@ -523,89 +523,87 @@ ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 1
  468      6574615F 
  468      63757374 
  468      6E766C00 
- 469              	.LASF13:
- 470 0082 63795F6D 		.ascii	"cy_meta_configecc\000"
- 470      6574615F 
- 470      636F6E66 
- 470      69676563 
- 470      6300
+ 469              	.LASF20:
+ 470 0082 443A5C77 		.ascii	"D:\\workspace\\Node-Walrus\\Node-Walrus.cydsn\000"
+ 470      6F726B73 
+ 470      70616365 
+ 470      5C4E6F64 
+ 470      652D5761 
  471              	.LASF8:
- 472 0094 756E7369 		.ascii	"unsigned int\000"
+ 472 00ad 756E7369 		.ascii	"unsigned int\000"
  472      676E6564 
  472      20696E74 
  472      00
  473              	.LASF7:
- 474 00a1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 474 00ba 6C6F6E67 		.ascii	"long long unsigned int\000"
  474      206C6F6E 
  474      6720756E 
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 10
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 10
 
 
  474      7369676E 
  474      65642069 
  475              	.LASF18:
- 476 00b8 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 476 00d1 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
  476      4320342E 
  476      382E3420 
  476      32303134 
  476      30353236 
- 477 00eb 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 477 0104 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
  477      20726576 
  477      6973696F 
  477      6E203231 
  477      31333538 
- 478 011e 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 478 0137 30202D66 		.ascii	"0 -ffunction-sections\000"
  478      66756E63 
  478      74696F6E 
  478      2D736563 
  478      74696F6E 
  479              	.LASF16:
- 480 0134 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 480 014d 63795F6D 		.ascii	"cy_meta_flashprotect\000"
  480      6574615F 
  480      666C6173 
  480      6870726F 
  480      74656374 
  481              	.LASF15:
- 482 0149 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 482 0162 63795F6D 		.ascii	"cy_meta_wonvl\000"
  482      6574615F 
  482      776F6E76 
  482      6C00
  483              	.LASF12:
- 484 0157 73697A65 		.ascii	"sizetype\000"
+ 484 0170 73697A65 		.ascii	"sizetype\000"
  484      74797065 
  484      00
- 485              	.LASF6:
- 486 0160 6C6F6E67 		.ascii	"long long int\000"
- 486      206C6F6E 
- 486      6720696E 
- 486      7400
- 487              	.LASF20:
- 488 016e 443A5C77 		.ascii	"D:\\workspace\\Node-Wolrus\\Node-Wolrus\\Node-Wolru"
- 488      6F726B73 
- 488      70616365 
- 488      5C4E6F64 
- 488      652D576F 
- 489 019d 732E6379 		.ascii	"s.cydsn\000"
- 489      64736E00 
- 490              	.LASF11:
- 491 01a5 63686172 		.ascii	"char\000"
- 491      00
- 492              	.LASF2:
- 493 01aa 73686F72 		.ascii	"short int\000"
- 493      7420696E 
- 493      7400
- 494              	.LASF21:
- 495 01b4 75696E74 		.ascii	"uint8\000"
- 495      3800
- 496              	.LASF4:
-ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccKSRVbG.s 			page 11
+ 485              	.LASF13:
+ 486 0179 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 486      6574615F 
+ 486      636F6E66 
+ 486      69676563 
+ 486      6300
+ 487              	.LASF6:
+ 488 018b 6C6F6E67 		.ascii	"long long int\000"
+ 488      206C6F6E 
+ 488      6720696E 
+ 488      7400
+ 489              	.LASF11:
+ 490 0199 63686172 		.ascii	"char\000"
+ 490      00
+ 491              	.LASF2:
+ 492 019e 73686F72 		.ascii	"short int\000"
+ 492      7420696E 
+ 492      7400
+ 493              	.LASF21:
+ 494 01a8 75696E74 		.ascii	"uint8\000"
+ 494      3800
+ 495              	.LASF4:
+ 496 01ae 6C6F6E67 		.ascii	"long int\000"
+ 496      20696E74 
+ARM GAS  C:\Users\khjtony\AppData\Local\Temp\ccFGvLjt.s 			page 11
 
 
- 497 01ba 6C6F6E67 		.ascii	"long int\000"
- 497      20696E74 
- 497      00
- 498              	.LASF0:
- 499 01c3 7369676E 		.ascii	"signed char\000"
- 499      65642063 
- 499      68617200 
- 500              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 496      00
+ 497              	.LASF0:
+ 498 01b7 7369676E 		.ascii	"signed char\000"
+ 498      65642063 
+ 498      68617200 
+ 499              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
